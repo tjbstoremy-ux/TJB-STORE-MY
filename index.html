@@ -1,19 +1,130 @@
 <!DOCTYPE html>
-<html>
+<html lang="ms">
 <head>
-  <title>Dinie Topup</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TJB STORE MY BY ELXKONO</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: white;
+}
+
+.header {
+  text-align: center;
+  padding: 45px 20px;
+  background: #1e293b;
+}
+
+.header h1 {
+  font-size: 40px;
+  margin: 0;
+}
+
+.header p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.container {
+  width: 90%;
+  max-width: 550px;
+  margin: 25px auto;
+}
+
+.card {
+  background: #ffffff;
+  color: #111827;
+  padding: 25px;
+  margin-bottom: 20px;
+  border-radius: 18px;
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+.package {
+  width: 100%;
+  padding: 18px;
+  margin: 8px 0;
+  background: #f8fafc;
+  border: 2px solid #cbd5e1;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.package:hover {
+  border-color: #111827;
+}
+
+input {
+  width: 100%;
+  padding: 16px;
+  margin: 7px 0;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.topup {
+  width: 100%;
+  padding: 17px;
+  margin-top: 12px;
+  background: #111827;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.topup:hover {
+  background: #334155;
+}
+</style>
 </head>
+
 <body>
 
+<div class="header">
   <h1>TJB STORE MY</h1>
   <p>Mobile Legends Diamond Top Up</p>
+</div>
 
-  <h2>Pilih Diamond</h2>
+<div class="container">
 
-  <button>86 Diamond - RM6</button><br><br>
-  <button>172 Diamond - RM12</button><br><br>
-  <button>257 Diamond - RM18</button><br><br>
-  <button>355 Diamond - RM28</button>
+  <div class="card">
+    <h2>💎 PILIH DIAMOND</h2>
+
+    <button class="package">86 Diamond — RM6</button>
+    <button class="package">172 Diamond — RM12</button>
+    <button class="package">257 Diamond — RM18</button>
+    <button class="package">355 Diamond — RM28</button>
+  </div>
+
+  <div class="card">
+    <h2>👤 MAKLUMAT PLAYER</h2>
+
+    <input type="text" placeholder="Masukkan User ID">
+
+    <input type="text" placeholder="Masukkan Server ID">
+
+    <button class="topup">TOP UP SEKARANG</button>
+  </div>
+
+</div>
 
 </body>
 </html>
