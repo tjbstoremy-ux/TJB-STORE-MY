@@ -1,0 +1,32 @@
+<!DO TYPE html>
+
+<html>
+
+ <title> TJB STORE MY</title>
+
+</head>
+
+<body>
+
+ <h1>TJB STORE MY</h1>
+ <p>mobile legends diamond topup</p>
+
+ <h2>pilih Diamond</h2>
+ 
+ 
+ <button>67 diamond-RM67</button><br><br>
+
+ <h2>maklumat player</h2>
+ 
+ <input type="text" placeholder="User ID">
+ <br><br>
+
+ <input type="text" placeholder="Server ID"> <br><br>
+
+
+
+ <button>TOP UP</button>
+ </body>
+ </html>
+
+ 
