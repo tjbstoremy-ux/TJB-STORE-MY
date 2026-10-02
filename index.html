@@ -169,4 +169,471 @@
     /* MOBILE */
 
     @media (max-width: 450px) {
-     
+      body {
+        padding: 12px;
+      }
+
+      .banner {
+        height: 180px;
+      }
+
+      .package {
+        padding: 12px 8px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+  <!-- ===================== -->
+  <!-- BANNER -->
+  <!-- ===================== -->
+
+  <img
+    src="https://i.postimg.cc/bJn9tn1h/cfd4f2dba4e03392a4701de07b45d33a.jpg"
+    class="banner"
+    alt="TJB Store MY">
+
+
+  <!-- ===================== -->
+  <!-- HEADER -->
+  <!-- ===================== -->
+
+  <div class="header">
+
+    <h1>🔥 TJB STORE MY</h1>
+
+    <p>
+      Mobile Legends Diamond Top Up
+    </p>
+
+  </div>
+
+
+  <!-- ===================== -->
+  <!-- DIAMOND -->
+  <!-- ===================== -->
+
+  <div class="card">
+
+    <h2>💎 Pilih Diamond</h2>
+
+    <div class="packages">
+
+
+      <!-- 42 DIAMOND -->
+
+      <button
+        class="package"
+        onclick="selectPackage(this, '42 Diamond (First Recharge Bonus)', 3.50)">
+
+        💎 42 Diamond
+
+        <br>
+
+        <span class="bonus">
+          🎁 First Recharge Bonus
+        </span>
+
+        <br>
+
+        RM3.50
+
+      </button>
+
+
+      <!-- 56 DIAMOND -->
+
+      <button
+        class="package"
+        onclick="selectPackage(this, '56 Diamond (First Recharge Bonus)', 5)">
+
+        💎 56 Diamond
+
+        <br>
+
+        <span class="bonus">
+          🎁 First Recharge Bonus
+        </span>
+
+        <br>
+
+        RM5.00
+
+      </button>
+
+
+      <!-- 112 DIAMOND -->
+
+      <button
+        class="package"
+        onclick="selectPackage(this, '112 Diamond (First Recharge Bonus)', 9.40)">
+
+        💎 112 Diamond
+
+        <br>
+
+        <span class="bonus">
+          🎁 First Recharge Bonus
+        </span>
+
+        <br>
+
+        RM9.40
+
+      </button>
+
+
+      <!-- 284 DIAMOND -->
+
+      <button
+        class="package"
+        onclick="selectPackage(this, '284 Diamond (First Recharge Bonus)', 21)">
+
+        💎 284 Diamond
+
+        <br>
+
+        <span class="bonus">
+          🎁 First Recharge Bonus
+        </span>
+
+        <br>
+
+        RM21.00
+
+      </button>
+
+
+      <!-- 355 DIAMOND -->
+
+      <button
+        class="package"
+        onclick="selectPackage(this, '355 Diamond (First Recharge Bonus)', 26.20)">
+
+        💎 355 Diamond
+
+        <br>
+
+        <span class="bonus">
+          🎁 First Recharge Bonus
+        </span>
+
+        <br>
+
+        RM26.20
+
+      </button>
+
+
+      <!-- 571 DIAMOND -->
+
+      <button
+        class="package"
+        onclick="selectPackage(this, '571 Diamond (First Recharge Bonus)', 43)">
+
+        💎 571 Diamond
+
+        <br>
+
+        <span class="bonus">
+          🎁 First Recharge Bonus
+        </span>
+
+        <br>
+
+        RM43.00
+
+      </button>
+
+
+      <!-- 856 DIAMOND -->
+
+      <button
+        class="package"
+        onclick="selectPackage(this, '856 Diamond (First Recharge Bonus)', 62.10)">
+
+        💎 856 Diamond
+
+        <br>
+
+        <span class="bonus">
+          🎁 First Recharge Bonus
+        </span>
+
+        <br>
+
+        RM62.10
+
+      </button>
+
+
+      <!-- 1085 DIAMOND -->
+
+      <button
+        class="package"
+        onclick="selectPackage(this, '1085 Diamond (First Recharge Bonus)', 82.10)">
+
+        💎 1085 Diamond
+
+        <br>
+
+        <span class="bonus">
+          🎁 First Recharge Bonus
+        </span>
+
+        <br>
+
+        RM82.10
+
+      </button>
+
+
+    </div>
+
+
+    <p id="selected">
+      Belum pilih pakej
+    </p>
+
+  </div>
+
+
+  <!-- ===================== -->
+  <!-- PLAYER INFO -->
+  <!-- ===================== -->
+
+  <div class="card">
+
+    <h2>🎮 Maklumat Player</h2>
+
+    <input
+      type="text"
+      id="userId"
+      placeholder="Masukkan User ID">
+
+    <input
+      type="text"
+      id="serverId"
+      placeholder="Masukkan Server ID">
+
+  </div>
+
+
+  <!-- ===================== -->
+  <!-- PAYMENT -->
+  <!-- ===================== -->
+
+  <div class="card">
+
+    <h2>💳 Pembayaran</h2>
+
+    <p>
+      Scan QR di bawah untuk membuat pembayaran.
+    </p>
+
+
+    <!-- QR PAYMENT -->
+
+    <a
+      href="https://i.postimg.cc/g2jQQMvn/1790922003669.jpg"
+      target="_blank">
+
+      <img
+        src="https://i.postimg.cc/g2jQQMvn/1790922003669.jpg"
+        class="qr"
+        alt="Payment QR">
+
+    </a>
+
+
+    <p class="note">
+
+      Selepas membuat pembayaran,
+      tekan butang <b>SAYA SUDAH BAYAR</b>.
+
+      <br><br>
+
+      Pastikan pembayaran benar-benar berjaya.
+
+    </p>
+
+
+    <button
+      class="pay-btn"
+      onclick="makeOrder()">
+
+      📲 SAYA SUDAH BAYAR
+
+    </button>
+
+  </div>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 TJB STORE MY
+
+  </footer>
+
+
+</div>
+
+
+<script>
+
+  /* ========================= */
+  /* SELECT PACKAGE */
+  /* ========================= */
+
+  let selectedPackage = "";
+  let selectedPrice = 0;
+
+
+  function selectPackage(button, packageName, price) {
+
+    document
+      .querySelectorAll(".package")
+      .forEach(btn => {
+        btn.classList.remove("selected");
+      });
+
+
+    button.classList.add("selected");
+
+
+    selectedPackage = packageName;
+    selectedPrice = price;
+
+
+    document.getElementById("selected").innerText =
+
+      "Dipilih: " +
+      packageName +
+      " — RM" +
+      price.toFixed(2);
+
+  }
+
+
+  /* ========================= */
+  /* WHATSAPP ORDER */
+  /* ========================= */
+
+  function makeOrder() {
+
+    const userId =
+      document
+        .getElementById("userId")
+        .value
+        .trim();
+
+
+    const serverId =
+      document
+        .getElementById("serverId")
+        .value
+        .trim();
+
+
+    /* CHECK PACKAGE */
+
+    if (!selectedPackage) {
+
+      alert(
+        "Sila pilih diamond dahulu."
+      );
+
+      return;
+    }
+
+
+    /* CHECK USER ID */
+
+    if (!userId) {
+
+      alert(
+        "Sila masukkan User ID."
+      );
+
+      return;
+    }
+
+
+    /* CHECK SERVER ID */
+
+    if (!serverId) {
+
+      alert(
+        "Sila masukkan Server ID."
+      );
+
+      return;
+    }
+
+
+    /* ======================= */
+    /* WHATSAPP NUMBER */
+    /* ======================= */
+
+    const whatsappNumber =
+      "601153575022";
+
+
+    /* ======================= */
+    /* ORDER MESSAGE */
+    /* ======================= */
+
+    const message =
+
+      "🛒 ORDER TJB STORE MY\n\n" +
+
+      "💎 Package: " +
+      selectedPackage +
+      "\n" +
+
+      "💰 Harga: RM" +
+      selectedPrice.toFixed(2) +
+      "\n\n" +
+
+      "🎮 User ID: " +
+      userId +
+      "\n" +
+
+      "🌐 Server ID: " +
+      serverId +
+      "\n\n" +
+
+      "✅ Saya sudah membuat pembayaran.";
+
+
+    /* ======================= */
+    /* OPEN WHATSAPP */
+    /* ======================= */
+
+    const whatsappURL =
+
+      "https://wa.me/" +
+      whatsappNumber +
+      "?text=" +
+      encodeURIComponent(message);
+
+
+    window.open(
+      whatsappURL,
+      "_blank"
+    );
+
+  }
+
+</script>
+
+</body>
+</html>
