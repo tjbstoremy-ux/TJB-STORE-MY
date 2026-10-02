@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>TJB STORE MY</title>
 
   <style>
@@ -37,9 +36,8 @@
       margin-bottom: 15px;
     }
 
-    .header h1 {
+    h1 {
       margin: 5px 0;
-      font-size: 30px;
     }
 
     .header p {
@@ -51,10 +49,6 @@
       padding: 20px;
       border-radius: 18px;
       margin-bottom: 18px;
-    }
-
-    .card h2 {
-      margin-top: 0;
     }
 
     .packages {
@@ -70,16 +64,10 @@
       padding: 15px;
       border-radius: 12px;
       cursor: pointer;
-      text-align: center;
-      font-size: 15px;
-    }
-
-    .package:hover {
-      border-color: #4da3ff;
     }
 
     .package.selected {
-      border-color: #4da3ff;
+      border-color: #1683ff;
       background: #203b5c;
     }
 
@@ -91,13 +79,21 @@
       border-radius: 10px;
       background: #1b2b40;
       color: white;
-      font-size: 15px;
     }
 
-    .selected {
-      margin-top: 15px;
+    #selected {
       color: #7fc1ff;
       font-weight: bold;
+    }
+
+    .qr {
+      width: 250px;
+      max-width: 100%;
+      display: block;
+      margin: 15px auto;
+      background: white;
+      padding: 8px;
+      border-radius: 15px;
     }
 
     .pay-btn {
@@ -110,38 +106,17 @@
       font-size: 17px;
       font-weight: bold;
       cursor: pointer;
-      margin-top: 15px;
-    }
-
-    .pay-btn:hover {
-      background: #0d6ed5;
-    }
-
-    .qr-box {
-      text-align: center;
-    }
-
-    .qr {
-      width: 250px;
-      max-width: 100%;
-      border-radius: 15px;
-      margin: 15px auto;
-      display: block;
-      background: white;
-      padding: 8px;
     }
 
     .note {
       color: #aab7c8;
       font-size: 13px;
-      line-height: 1.5;
     }
 
     footer {
       text-align: center;
       color: #718096;
       font-size: 13px;
-      margin-top: 25px;
     }
   </style>
 </head>
@@ -152,15 +127,19 @@
 
   <div class="header">
 
-    <!-- Kalau ada banner, pastikan fail bernama banner.jpg -->
-    <img src="banner.jpg" class="banner" alt="TJB Store Banner">
+    <!-- BANNER -->
+    <img
+      src="BANNER_URL_KAU"
+      class="banner"
+      alt="TJB Store Banner">
 
     <h1>TJB STORE MY</h1>
     <p>Mobile Legends Diamond Top Up</p>
+
   </div>
 
 
-  <!-- DIAMOND -->
+  <!-- PILIH DIAMOND -->
   <div class="card">
 
     <h2>💎 Pilih Diamond</h2>
@@ -169,38 +148,32 @@
 
       <button class="package"
         onclick="selectPackage(this, '86 Diamond', 6)">
-        💎 86 Diamond<br>
-        RM6
+        💎 86 Diamond<br>RM6
       </button>
 
       <button class="package"
         onclick="selectPackage(this, '172 Diamond', 12)">
-        💎 172 Diamond<br>
-        RM12
+        💎 172 Diamond<br>RM12
       </button>
 
       <button class="package"
         onclick="selectPackage(this, '257 Diamond', 18)">
-        💎 257 Diamond<br>
-        RM18
+        💎 257 Diamond<br>RM18
       </button>
 
       <button class="package"
         onclick="selectPackage(this, '355 Diamond', 24.98)">
-        💎 355 Diamond<br>
-        RM24.98
+        💎 355 Diamond<br>RM24.98
       </button>
 
     </div>
 
-    <p id="selected">
-      Belum pilih pakej
-    </p>
+    <p id="selected">Belum pilih pakej</p>
 
   </div>
 
 
-  <!-- PLAYER INFO -->
+  <!-- PLAYER -->
   <div class="card">
 
     <h2>🎮 Maklumat Player</h2>
@@ -208,33 +181,34 @@
     <input
       type="text"
       id="userId"
-      placeholder="Masukkan User ID">
+      placeholder="User ID">
 
     <input
       type="text"
       id="serverId"
-      placeholder="Masukkan Server ID">
+      placeholder="Server ID">
 
   </div>
 
 
-  <!-- PAYMENT -->
-  <div class="card qr-box">
+  <!-- QR PAYMENT -->
+  <div class="card">
 
     <h2>💳 Pembayaran</h2>
 
-    <p>
-      Scan QR di bawah untuk membuat pembayaran.
-    </p>
+    <p>Scan QR di bawah untuk membuat pembayaran.</p>
 
-    <!-- Pastikan gambar QR bernama qr.png -->
-    <a href="qr.png" target="_blank">
-      <img src="qr.png" class="qr" alt="Payment QR">
+    <a href="MASUKKAN_URL_QR_KAT_SINI" target="_blank">
+
+      <img
+        src="1790922003669"
+        class="qr"
+        alt="Payment QR">
+
     </a>
 
     <p class="note">
-      Selepas pembayaran, simpan bukti pembayaran.
-      Jangan tutup halaman ini sehingga pesanan selesai.
+      Selepas pembayaran, tekan butang di bawah.
     </p>
 
     <button class="pay-btn" onclick="makeOrder()">
@@ -253,56 +227,50 @@
 
 <script>
 
-  let selectedPackage = "";
-  let selectedPrice = 0;
+let selectedPackage = "";
+let selectedPrice = 0;
 
+function selectPackage(button, packageName, price) {
 
-  function selectPackage(button, packageName, price) {
+  document.querySelectorAll(".package")
+    .forEach(btn => btn.classList.remove("selected"));
 
-    document.querySelectorAll(".package")
-      .forEach(btn => btn.classList.remove("selected"));
+  button.classList.add("selected");
 
-    button.classList.add("selected");
+  selectedPackage = packageName;
+  selectedPrice = price;
 
-    selectedPackage = packageName;
-    selectedPrice = price;
+  document.getElementById("selected").innerText =
+    "Dipilih: " + packageName +
+    " — RM" + price.toFixed(2);
+}
 
-    document.getElementById("selected").innerText =
-      "Dipilih: " + packageName + " — RM" + price.toFixed(2);
+function makeOrder() {
+
+  const userId =
+    document.getElementById("userId").value.trim();
+
+  const serverId =
+    document.getElementById("serverId").value.trim();
+
+  if (!selectedPackage) {
+    alert("Sila pilih diamond dahulu.");
+    return;
   }
 
-
-  function makeOrder() {
-
-    const userId =
-      document.getElementById("userId").value.trim();
-
-    const serverId =
-      document.getElementById("serverId").value.trim();
-
-
-    if (!selectedPackage) {
-      alert("Sila pilih diamond terlebih dahulu.");
-      return;
-    }
-
-
-    if (!userId || !serverId) {
-      alert("Sila masukkan User ID dan Server ID.");
-      return;
-    }
-
-
-    alert(
-      "Pesanan diterima!\n\n" +
-      "Pakej: " + selectedPackage + "\n" +
-      "Harga: RM" + selectedPrice.toFixed(2) + "\n" +
-      "User ID: " + userId + "\n" +
-      "Server ID: " + serverId +
-      "\n\nSila pastikan pembayaran telah dibuat."
-    );
-
+  if (!userId || !serverId) {
+    alert("Sila masukkan User ID dan Server ID.");
+    return;
   }
+
+  alert(
+    "Pesanan diterima!\n\n" +
+    "Pakej: " + selectedPackage + "\n" +
+    "Harga: RM" + selectedPrice.toFixed(2) + "\n" +
+    "User ID: " + userId + "\n" +
+    "Server ID: " + serverId
+  );
+}
 
 </script>
 
