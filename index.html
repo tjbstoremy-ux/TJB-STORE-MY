@@ -24,6 +24,17 @@
       margin: auto;
     }
 
+    /* BANNER */
+
+    .banner {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 18px;
+      display: block;
+      margin-bottom: 20px;
+    }
+
     .header {
       text-align: center;
       margin-bottom: 20px;
@@ -31,12 +42,14 @@
 
     .header h1 {
       font-size: 30px;
-      margin-bottom: 5px;
+      margin: 5px 0;
     }
 
     .header p {
-      color: #aaa;
+      color: #aab7c8;
     }
+
+    /* CARD */
 
     .card {
       background: #101d2e;
@@ -44,6 +57,8 @@
       border-radius: 18px;
       margin-bottom: 18px;
     }
+
+    /* DIAMOND */
 
     .packages {
       display: grid;
@@ -61,10 +76,22 @@
       font-size: 15px;
     }
 
+    .package:hover {
+      border-color: #1683ff;
+    }
+
     .package.selected {
       border-color: #1683ff;
       background: #203b5c;
     }
+
+    #selected {
+      color: #7fc1ff;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    /* INPUT */
 
     input {
       width: 100%;
@@ -75,12 +102,10 @@
       background: #1b2b40;
       color: white;
       font-size: 15px;
+      outline: none;
     }
 
-    #selected {
-      color: #7fc1ff;
-      font-weight: bold;
-    }
+    /* QR */
 
     .qr {
       width: 250px;
@@ -92,6 +117,14 @@
       border-radius: 15px;
     }
 
+    .note {
+      color: #aab7c8;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    /* BUTTON */
+
     .pay-btn {
       width: 100%;
       padding: 15px;
@@ -102,60 +135,111 @@
       font-size: 17px;
       font-weight: bold;
       cursor: pointer;
+      margin-top: 10px;
     }
 
-    .note {
-      color: #aaa;
-      font-size: 13px;
+    .pay-btn:hover {
+      background: #0d6ed5;
     }
 
     footer {
       text-align: center;
       color: #718096;
       font-size: 13px;
+      margin-top: 25px;
     }
   </style>
 </head>
+
 
 <body>
 
 <div class="container">
 
+
+  <!-- ===================== -->
+  <!-- BANNER -->
+  <!-- ===================== -->
+
+  <img
+    src="https://postimg.cc/CBF8yzvP"
+    class="banner"
+    alt="TJB Store Banner">
+
+
+  <!-- ===================== -->
+  <!-- HEADER -->
+  <!-- ===================== -->
+
   <div class="header">
+
     <h1>🔥 TJB STORE MY</h1>
-    <p>Mobile Legends Diamond Top Up</p>
+
+    <p>
+      Mobile Legends Diamond Top Up
+    </p>
+
   </div>
 
 
-  <!-- DIAMOND -->
+  <!-- ===================== -->
+  <!-- PILIH DIAMOND -->
+  <!-- ===================== -->
 
   <div class="card">
 
     <h2>💎 Pilih Diamond</h2>
 
+
     <div class="packages">
 
-      <button class="package"
+
+      <button
+        class="package"
         onclick="selectPackage(this, '86 Diamond', 6)">
-        💎 86 Diamond<br>RM6
+
+        💎 86 Diamond
+        <br>
+        RM6
+
       </button>
 
-      <button class="package"
+
+      <button
+        class="package"
         onclick="selectPackage(this, '172 Diamond', 12)">
-        💎 172 Diamond<br>RM12
+
+        💎 172 Diamond
+        <br>
+        RM12
+
       </button>
 
-      <button class="package"
+
+      <button
+        class="package"
         onclick="selectPackage(this, '257 Diamond', 18)">
-        💎 257 Diamond<br>RM18
+
+        💎 257 Diamond
+        <br>
+        RM18
+
       </button>
 
-      <button class="package"
+
+      <button
+        class="package"
         onclick="selectPackage(this, '355 Diamond', 24.98)">
-        💎 355 Diamond<br>RM24.98
+
+        💎 355 Diamond
+        <br>
+        RM24.98
+
       </button>
+
 
     </div>
+
 
     <p id="selected">
       Belum pilih pakej
@@ -164,34 +248,44 @@
   </div>
 
 
-  <!-- PLAYER -->
+  <!-- ===================== -->
+  <!-- PLAYER INFO -->
+  <!-- ===================== -->
 
   <div class="card">
 
     <h2>🎮 Maklumat Player</h2>
 
+
     <input
       type="text"
       id="userId"
-      placeholder="User ID">
+      placeholder="Masukkan User ID">
+
 
     <input
       type="text"
       id="serverId"
-      placeholder="Server ID">
+      placeholder="Masukkan Server ID">
 
   </div>
 
 
+  <!-- ===================== -->
   <!-- PAYMENT -->
+  <!-- ===================== -->
 
   <div class="card">
 
     <h2>💳 Pembayaran</h2>
 
+
     <p>
       Scan QR di bawah untuk membuat pembayaran.
     </p>
+
+
+    <!-- QR KAU -->
 
     <a
       href="https://i.postimg.cc/g2jQQMvn/1790922003669.jpg"
@@ -204,114 +298,217 @@
 
     </a>
 
+
     <p class="note">
-      Selepas pembayaran, tekan butang di bawah.
+
+      Selepas membuat pembayaran,
+      tekan butang <b>SAYA SUDAH BAYAR</b>.
+
+      <br><br>
+
+      Pastikan pembayaran benar-benar berjaya.
+
     </p>
 
 
-    <button class="pay-btn" onclick="makeOrder()">
+    <button
+      class="pay-btn"
+      onclick="makeOrder()">
+
       📲 SAYA SUDAH BAYAR
+
     </button>
 
   </div>
 
 
   <footer>
+
     © 2026 TJB STORE MY
+
   </footer>
+
 
 </div>
 
 
 <script>
 
+
+/* ========================= */
+/* PEMILIHAN DIAMOND */
+/* ========================= */
+
+
 let selectedPackage = "";
+
 let selectedPrice = 0;
 
 
-// PILIH DIAMOND
-
 function selectPackage(button, packageName, price) {
 
-  document.querySelectorAll(".package")
-    .forEach(btn => btn.classList.remove("selected"));
+
+  document
+    .querySelectorAll(".package")
+    .forEach(btn =>
+      btn.classList.remove("selected")
+    );
+
 
   button.classList.add("selected");
+
 
   selectedPackage = packageName;
 
   selectedPrice = price;
 
+
   document.getElementById("selected").innerText =
+
     "Dipilih: " +
     packageName +
     " — RM" +
     price.toFixed(2);
+
 }
 
 
-// BILA TEKAN "SAYA SUDAH BAYAR"
+
+/* ========================= */
+/* WHATSAPP ORDER */
+/* ========================= */
+
 
 function makeOrder() {
 
+
   const userId =
-    document.getElementById("userId").value.trim();
+    document
+      .getElementById("userId")
+      .value
+      .trim();
+
 
   const serverId =
-    document.getElementById("serverId").value.trim();
+    document
+      .getElementById("serverId")
+      .value
+      .trim();
+
+
+
+  /* CHECK DIAMOND */
 
 
   if (!selectedPackage) {
 
-    alert("Sila pilih diamond dahulu.");
+    alert(
+      "Sila pilih diamond dahulu."
+    );
 
     return;
   }
 
 
-  if (!userId || !serverId) {
 
-    alert("Sila masukkan User ID dan Server ID.");
+  /* CHECK USER ID */
+
+
+  if (!userId) {
+
+    alert(
+      "Sila masukkan User ID."
+    );
 
     return;
   }
 
+
+
+  /* CHECK SERVER ID */
+
+
+  if (!serverId) {
+
+    alert(
+      "Sila masukkan Server ID."
+    );
+
+    return;
+  }
+
+
+
+  /* ======================= */
+  /* WHATSAPP NUMBER */
+  /* ======================= */
 
   /*
-  ====================================
-  TUKAR NOMBOR WHATSAPP DI SINI
-  ====================================
+  TUKAR NOMBOR INI
+  KEPADA WHATSAPP KAU.
+
+  Contoh:
+
+  0123456789
+
+  menjadi:
+
+  60123456789
+
   */
 
-  const whatsappNumber = "601153575022";
+
+  const whatsappNumber =
+    "6011153575022";
+
+
+
+  /* ======================= */
+  /* ORDER MESSAGE */
+  /* ======================= */
 
 
   const message =
-    "ORDER TJB STORE MY\n\n" +
 
-    "Diamond: " +
-    selectedPackage + "\n" +
+    "🛒 ORDER TJB STORE MY\n\n" +
 
-    "Harga: RM" +
-    selectedPrice.toFixed(2) + "\n\n" +
+    "💎 Diamond: " +
+    selectedPackage +
+    "\n" +
 
-    "User ID: " +
-    userId + "\n" +
+    "💰 Harga: RM" +
+    selectedPrice.toFixed(2) +
+    "\n\n" +
 
-    "Server ID: " +
-    serverId + "\n\n" +
+    "🎮 User ID: " +
+    userId +
+    "\n" +
 
-    "Saya sudah membuat pembayaran.";
+    "🌐 Server ID: " +
+    serverId +
+    "\n\n" +
+
+    "✅ Saya sudah membuat pembayaran.";
+
+
+
+  /* ======================= */
+  /* OPEN WHATSAPP */
+  /* ======================= */
 
 
   const whatsappURL =
+
     "https://wa.me/" +
     whatsappNumber +
     "?text=" +
     encodeURIComponent(message);
 
 
-  window.open(whatsappURL, "_blank");
+  window.open(
+    whatsappURL,
+    "_blank"
+  );
 
 }
 
