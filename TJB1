@@ -1,32 +1,106 @@
-<!DO TYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TJB STORE MY</title>
 
-<html>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f4f8;
+  color: #111;
+}
 
- <title> TJB STORE MY</title>
+header {
+  background: #111827;
+  color: white;
+  padding: 25px;
+  text-align: center;
+}
 
+.container {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.package {
+  width: 100%;
+  padding: 15px;
+  margin: 8px 0;
+  border: 2px solid #ddd;
+  background: white;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.package:hover {
+  border-color: #111827;
+}
+
+input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.topup {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: #111827;
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+}
+</style>
 </head>
 
 <body>
 
- <h1>TJB STORE MY</h1>
- <p>mobile legends diamond topup</p>
+<header>
+  <h1>TJB STORE MY</h1>
+  <p>Mobile Legends Diamond</p>
+</header>
 
- <h2>pilih Diamond</h2>
- 
- 
- <button>67 diamond-RM67</button><br><br>
+<div class="container">
 
- <h2>maklumat player</h2>
- 
- <input type="text" placeholder="User ID">
- <br><br>
+<div class="card">
+  <h2>Pilih Diamond</h2>
 
- <input type="text" placeholder="Server ID"> <br><br>
+  <button class="package">86 Diamond — RM6</button>
+  <button class="package">172 Diamond — RM12</button>
+  <button class="package">257 Diamond — RM18</button>
+  <button class="package">355 Diamond — RM28</button>
+</div>
 
+<div class="card">
+  <h2>Player Information</h2>
 
+  <input type="text" placeholder="User ID">
+  <input type="text" placeholder="Server ID">
 
- <button>TOP UP</button>
- </body>
- </html>
+  <button class="topup">TOP UP SEKARANG</button>
+</div>
+
+</div>
+
+</body>
+</html>
 
  
