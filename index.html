@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>TJB STORE MY BY ELXKONO</title>
+<title>TJB STORE MY</title>
 
 <style>
 * {
@@ -31,7 +31,6 @@ body {
 
 .header p {
   font-size: 18px;
-  margin-top: 10px;
 }
 
 .container {
@@ -41,7 +40,7 @@ body {
 }
 
 .card {
-  background: #ffffff;
+  background: white;
   color: #111827;
   padding: 25px;
   margin-bottom: 20px;
@@ -90,8 +89,10 @@ input {
   cursor: pointer;
 }
 
-.topup:hover {
-  background: #334155;
+.selected {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 17px;
 }
 </style>
 </head>
@@ -108,23 +109,86 @@ input {
   <div class="card">
     <h2>💎 PILIH DIAMOND</h2>
 
-    <button class="package">86 Diamond — RM6</button>
-    <button class="package">172 Diamond — RM12</button>
-    <button class="package">257 Diamond — RM18</button>
-    <button class="package">355 Diamond — RM28</button>
+    <button class="package" onclick="selectPackage(this, '86 Diamond', 6)">
+      💎 86 Diamond — RM6
+    </button>
+
+    <button class="package" onclick="selectPackage(this, '172 Diamond', 12)">
+      💎 172 Diamond — RM12
+    </button>
+
+    <button class="package" onclick="selectPackage(this, '257 Diamond', 18)">
+      💎 257 Diamond — RM18
+    </button>
+
+    <button class="package" onclick="selectPackage(this, '355 Diamond', 28)">
+      💎 355 Diamond — RM28
+    </button>
+
+    <p id="selected" class="selected">
+      Belum pilih diamond
+    </p>
   </div>
 
   <div class="card">
     <h2>👤 MAKLUMAT PLAYER</h2>
 
-    <input type="text" placeholder="Masukkan User ID">
+    <input type="text" id="userID" placeholder="Masukkan User ID">
 
-    <input type="text" placeholder="Masukkan Server ID">
+    <input type="text" id="serverID" placeholder="Masukkan Server ID">
 
-    <button class="topup">TOP UP SEKARANG</button>
+    <button class="topup" onclick="makeOrder()">
+      TOP UP SEKARANG
+    </button>
   </div>
 
 </div>
 
+<script>
+
+let selectedDiamond = "";
+let selectedPrice = 0;
+
+function selectPackage(button, diamond, price) {
+
+  document.querySelectorAll(".package").forEach(function(btn) {
+    btn.style.borderColor = "#cbd5e1";
+  });
+
+  button.style.borderColor = "#111827";
+
+  selectedDiamond = diamond;
+  selectedPrice = price;
+
+  document.getElementById("selected").innerText =
+    "Dipilih: " + diamond + " — RM" + price;
+}
+
+function makeOrder() {
+
+  const userID = document.getElementById("userID").value;
+  const serverID = document.getElementById("serverID").value;
+
+  if (selectedDiamond === "") {
+    alert("Sila pilih diamond dahulu.");
+    return;
+  }
+
+  if (userID === "" || serverID === "") {
+    alert("Sila masukkan User ID dan Server ID.");
+    return;
+  }
+
+  alert(
+    "Order diterima!\n\n" +
+    "Package: " + selectedDiamond + "\n" +
+    "Harga: RM" + selectedPrice + "\n" +
+    "User ID: " + userID + "\n" +
+    "Server ID: " + serverID
+  );
+}
+
+</script>
+
 </body>
-</html>
+</html>>
