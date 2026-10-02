@@ -1,194 +1,310 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>TJB STORE MY</title>
+  <title>TJB STORE MY</title>
 
-<style>
-* {
-  box-sizing: border-box;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0f172a;
-  color: white;
-}
+    body {
+      margin: 0;
+      background: #07111f;
+      color: white;
+      padding: 20px;
+    }
 
-.header {
-  text-align: center;
-  padding: 45px 20px;
-  background: #1e293b;
-}
+    .container {
+      max-width: 600px;
+      margin: auto;
+    }
 
-.header h1 {
-  font-size: 40px;
-  margin: 0;
-}
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
-.header p {
-  font-size: 18px;
-}
+    .banner {
+      width: 100%;
+      max-height: 220px;
+      object-fit: cover;
+      border-radius: 18px;
+      margin-bottom: 15px;
+    }
 
-.container {
-  width: 90%;
-  max-width: 550px;
-  margin: 25px auto;
-}
+    .header h1 {
+      margin: 5px 0;
+      font-size: 30px;
+    }
 
-.card {
-  background: white;
-  color: #111827;
-  padding: 25px;
-  margin-bottom: 20px;
-  border-radius: 18px;
-}
+    .header p {
+      color: #aab7c8;
+    }
 
-.card h2 {
-  margin-top: 0;
-}
+    .card {
+      background: #101d2e;
+      padding: 20px;
+      border-radius: 18px;
+      margin-bottom: 18px;
+    }
 
-.package {
-  width: 100%;
-  padding: 18px;
-  margin: 8px 0;
-  background: #f8fafc;
-  border: 2px solid #cbd5e1;
-  border-radius: 12px;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-}
+    .card h2 {
+      margin-top: 0;
+    }
 
-.package:hover {
-  border-color: #111827;
-}
+    .packages {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
 
-input {
-  width: 100%;
-  padding: 16px;
-  margin: 7px 0;
-  border: 1px solid #cbd5e1;
-  border-radius: 10px;
-  font-size: 16px;
-}
+    .package {
+      background: #182940;
+      color: white;
+      border: 2px solid transparent;
+      padding: 15px;
+      border-radius: 12px;
+      cursor: pointer;
+      text-align: center;
+      font-size: 15px;
+    }
 
-.topup {
-  width: 100%;
-  padding: 17px;
-  margin-top: 12px;
-  background: #111827;
-  color: white;
-  border: none;
-  border-radius: 12px;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-}
+    .package:hover {
+      border-color: #4da3ff;
+    }
 
-.selected {
-  margin-top: 15px;
-  font-weight: bold;
-  font-size: 17px;
-}
-</style>
+    .package.selected {
+      border-color: #4da3ff;
+      background: #203b5c;
+    }
+
+    input {
+      width: 100%;
+      padding: 13px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 10px;
+      background: #1b2b40;
+      color: white;
+      font-size: 15px;
+    }
+
+    .selected {
+      margin-top: 15px;
+      color: #7fc1ff;
+      font-weight: bold;
+    }
+
+    .pay-btn {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 12px;
+      background: #1683ff;
+      color: white;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    .pay-btn:hover {
+      background: #0d6ed5;
+    }
+
+    .qr-box {
+      text-align: center;
+    }
+
+    .qr {
+      width: 250px;
+      max-width: 100%;
+      border-radius: 15px;
+      margin: 15px auto;
+      display: block;
+      background: white;
+      padding: 8px;
+    }
+
+    .note {
+      color: #aab7c8;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+      color: #718096;
+      font-size: 13px;
+      margin-top: 25px;
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="header">
-  <h1>TJB STORE MY</h1>
-  <p>Mobile Legends Diamond Top Up</p>
-</div>
-
 <div class="container">
 
+  <div class="header">
+
+    <!-- Kalau ada banner, pastikan fail bernama banner.jpg -->
+    <img src="banner.jpg" class="banner" alt="TJB Store Banner">
+
+    <h1>TJB STORE MY</h1>
+    <p>Mobile Legends Diamond Top Up</p>
+  </div>
+
+
+  <!-- DIAMOND -->
   <div class="card">
-    <h2>💎 PILIH DIAMOND</h2>
 
-    <button class="package" onclick="selectPackage(this, '86 Diamond', 6)">
-      💎 86 Diamond — RM6
-    </button>
+    <h2>💎 Pilih Diamond</h2>
 
-    <button class="package" onclick="selectPackage(this, '172 Diamond', 12)">
-      💎 172 Diamond — RM12
-    </button>
+    <div class="packages">
 
-    <button class="package" onclick="selectPackage(this, '257 Diamond', 18)">
-      💎 257 Diamond — RM18
-    </button>
+      <button class="package"
+        onclick="selectPackage(this, '86 Diamond', 6)">
+        💎 86 Diamond<br>
+        RM6
+      </button>
 
-    <button class="package" onclick="selectPackage(this, '355 Diamond', 28)">
-      💎 355 Diamond — RM28
-    </button>
+      <button class="package"
+        onclick="selectPackage(this, '172 Diamond', 12)">
+        💎 172 Diamond<br>
+        RM12
+      </button>
 
-    <p id="selected" class="selected">
-      Belum pilih diamond
+      <button class="package"
+        onclick="selectPackage(this, '257 Diamond', 18)">
+        💎 257 Diamond<br>
+        RM18
+      </button>
+
+      <button class="package"
+        onclick="selectPackage(this, '355 Diamond', 24.98)">
+        💎 355 Diamond<br>
+        RM24.98
+      </button>
+
+    </div>
+
+    <p id="selected">
+      Belum pilih pakej
     </p>
+
   </div>
 
+
+  <!-- PLAYER INFO -->
   <div class="card">
-    <h2>👤 MAKLUMAT PLAYER</h2>
 
-    <input type="text" id="userID" placeholder="Masukkan User ID">
+    <h2>🎮 Maklumat Player</h2>
 
-    <input type="text" id="serverID" placeholder="Masukkan Server ID">
+    <input
+      type="text"
+      id="userId"
+      placeholder="Masukkan User ID">
 
-    <button class="topup" onclick="makeOrder()">
-      TOP UP SEKARANG
-    </button>
+    <input
+      type="text"
+      id="serverId"
+      placeholder="Masukkan Server ID">
+
   </div>
+
+
+  <!-- PAYMENT -->
+  <div class="card qr-box">
+
+    <h2>💳 Pembayaran</h2>
+
+    <p>
+      Scan QR di bawah untuk membuat pembayaran.
+    </p>
+
+    <!-- Pastikan gambar QR bernama qr.png -->
+    <a href="qr.png" target="_blank">
+      <img src="qr.png" class="qr" alt="Payment QR">
+    </a>
+
+    <p class="note">
+      Selepas pembayaran, simpan bukti pembayaran.
+      Jangan tutup halaman ini sehingga pesanan selesai.
+    </p>
+
+    <button class="pay-btn" onclick="makeOrder()">
+      SAYA SUDAH BAYAR
+    </button>
+
+  </div>
+
+
+  <footer>
+    © 2026 TJB STORE MY
+  </footer>
 
 </div>
+
 
 <script>
 
-let selectedDiamond = "";
-let selectedPrice = 0;
+  let selectedPackage = "";
+  let selectedPrice = 0;
 
-function selectPackage(button, diamond, price) {
 
-  document.querySelectorAll(".package").forEach(function(btn) {
-    btn.style.borderColor = "#cbd5e1";
-  });
+  function selectPackage(button, packageName, price) {
 
-  button.style.borderColor = "#111827";
+    document.querySelectorAll(".package")
+      .forEach(btn => btn.classList.remove("selected"));
 
-  selectedDiamond = diamond;
-  selectedPrice = price;
+    button.classList.add("selected");
 
-  document.getElementById("selected").innerText =
-    "Dipilih: " + diamond + " — RM" + price;
-}
+    selectedPackage = packageName;
+    selectedPrice = price;
 
-function makeOrder() {
-
-  const userID = document.getElementById("userID").value;
-  const serverID = document.getElementById("serverID").value;
-
-  if (selectedDiamond === "") {
-    alert("Sila pilih diamond dahulu.");
-    return;
+    document.getElementById("selected").innerText =
+      "Dipilih: " + packageName + " — RM" + price.toFixed(2);
   }
 
-  if (userID === "" || serverID === "") {
-    alert("Sila masukkan User ID dan Server ID.");
-    return;
-  }
 
-  alert(
-    "Order diterima!\n\n" +
-    "Package: " + selectedDiamond + "\n" +
-    "Harga: RM" + selectedPrice + "\n" +
-    "User ID: " + userID + "\n" +
-    "Server ID: " + serverID
-  );
-}
+  function makeOrder() {
+
+    const userId =
+      document.getElementById("userId").value.trim();
+
+    const serverId =
+      document.getElementById("serverId").value.trim();
+
+
+    if (!selectedPackage) {
+      alert("Sila pilih diamond terlebih dahulu.");
+      return;
+    }
+
+
+    if (!userId || !serverId) {
+      alert("Sila masukkan User ID dan Server ID.");
+      return;
+    }
+
+
+    alert(
+      "Pesanan diterima!\n\n" +
+      "Pakej: " + selectedPackage + "\n" +
+      "Harga: RM" + selectedPrice.toFixed(2) + "\n" +
+      "User ID: " + userId + "\n" +
+      "Server ID: " + serverId +
+      "\n\nSila pastikan pembayaran telah dibuat."
+    );
+
+  }
 
 </script>
 
 </body>
-</html>>
+</html>
