@@ -35,6 +35,8 @@
       margin-bottom: 20px;
     }
 
+    /* HEADER */
+
     .header {
       text-align: center;
       margin-bottom: 20px;
@@ -58,7 +60,7 @@
       margin-bottom: 18px;
     }
 
-    /* DIAMOND */
+    /* PACKAGES */
 
     .packages {
       display: grid;
@@ -74,15 +76,24 @@
       border-radius: 12px;
       cursor: pointer;
       font-size: 15px;
+      line-height: 1.5;
+      transition: 0.2s;
     }
 
     .package:hover {
       border-color: #1683ff;
+      transform: translateY(-2px);
     }
 
     .package.selected {
       border-color: #1683ff;
       background: #203b5c;
+    }
+
+    .bonus {
+      color: #ffd43b;
+      font-size: 13px;
+      font-weight: bold;
     }
 
     #selected {
@@ -103,6 +114,10 @@
       color: white;
       font-size: 15px;
       outline: none;
+    }
+
+    input::placeholder {
+      color: #8796aa;
     }
 
     /* QR */
@@ -142,377 +157,16 @@
       background: #0d6ed5;
     }
 
+    /* FOOTER */
+
     footer {
       text-align: center;
       color: #718096;
       font-size: 13px;
       margin-top: 25px;
     }
-  </style>
-</head>
 
+    /* MOBILE */
 
-<body>
-
-<div class="container">
-
-
-  <!-- ===================== -->
-  <!-- BANNER -->
-  <!-- ===================== -->
-
-  <img
-    src="https://i.postimg.cc/bJn9tn1h/cfd4f2dba4e03392a4701de07b45d33a.jpg"
-    class="banner"
-    alt="TJB Store MY">
-
-
-  <!-- ===================== -->
-  <!-- HEADER -->
-  <!-- ===================== -->
-
-  <div class="header">
-
-    <h1>🔥 TJB STORE MY</h1>
-
-    <p>
-      Mobile Legends Diamond Top Up
-    </p>
-
-  </div>
-
-
-  <!-- ===================== -->
-  <!-- PILIH DIAMOND -->
-  <!-- ===================== -->
-
-  <div class="card">
-
-    <h2>💎 Pilih Diamond</h2>
-
-
-    <div class="packages">
-
-
-      <button
-        class="package"
-        onclick="selectPackage(this, '86 Diamond', 6)">
-
-        💎 56 Diamond(bonus first recharge)
-        <br>
-        RM5
-
-      </button>
-
-
-      <button
-        class="package"
-        onclick="selectPackage(this, '172 Diamond', 12)">
-
-        💎 112 Diamond(bonus first recharge)
-        <br>
-        RM9.40
-
-      </button>
-
-
-      <button
-        class="package"
-        onclick="selectPackage(this, '257 Diamond', 18)">
-
-        💎 355 Diamond(bonus first recharge)
-        <br>
-        RM26.20
-
-      </button>
-
-
-      <button
-        class="package"
-        onclick="selectPackage(this, '355 Diamond', 24.98)">
-
-        💎 856 Diamond(bonus first recharge)
-        <br>
-        RM62.10
-
-      </button>
-
-
-    </div>
-
-
-    <p id="selected">
-      Belum pilih pakej
-    </p>
-
-  </div>
-
-
-  <!-- ===================== -->
-  <!-- PLAYER INFO -->
-  <!-- ===================== -->
-
-  <div class="card">
-
-    <h2>🎮 Maklumat Player</h2>
-
-
-    <input
-      type="text"
-      id="userId"
-      placeholder="Masukkan User ID">
-
-
-    <input
-      type="text"
-      id="serverId"
-      placeholder="Masukkan Server ID">
-
-  </div>
-
-
-  <!-- ===================== -->
-  <!-- PAYMENT -->
-  <!-- ===================== -->
-
-  <div class="card">
-
-    <h2>💳 Pembayaran</h2>
-
-
-    <p>
-      Scan QR di bawah untuk membuat pembayaran.
-    </p>
-
-
-    <!-- QR KAU -->
-
-    <a
-      href="https://i.postimg.cc/g2jQQMvn/1790922003669.jpg"
-      target="_blank">
-
-      <img
-        src="https://i.postimg.cc/g2jQQMvn/1790922003669.jpg"
-        class="qr"
-        alt="Payment QR">
-
-    </a>
-
-
-    <p class="note">
-
-      Selepas membuat pembayaran,
-      tekan butang <b>SAYA SUDAH BAYAR</b>.
-
-      <br><br>
-
-      Pastikan pembayaran benar-benar berjaya.
-
-    </p>
-
-
-    <button
-      class="pay-btn"
-      onclick="makeOrder()">
-
-      📲 SAYA SUDAH BAYAR
-
-    </button>
-
-  </div>
-
-
-  <footer>
-
-    © 2026 TJB STORE MY
-
-  </footer>
-
-
-</div>
-
-
-<script>
-
-
-/* ========================= */
-/* PEMILIHAN DIAMOND */
-/* ========================= */
-
-
-let selectedPackage = "";
-
-let selectedPrice = 0;
-
-
-function selectPackage(button, packageName, price) {
-
-
-  document
-    .querySelectorAll(".package")
-    .forEach(btn =>
-      btn.classList.remove("selected")
-    );
-
-
-  button.classList.add("selected");
-
-
-  selectedPackage = packageName;
-
-  selectedPrice = price;
-
-
-  document.getElementById("selected").innerText =
-
-    "Dipilih: " +
-    packageName +
-    " — RM" +
-    price.toFixed(2);
-
-}
-
-
-
-/* ========================= */
-/* WHATSAPP ORDER */
-/* ========================= */
-
-
-function makeOrder() {
-
-
-  const userId =
-    document
-      .getElementById("userId")
-      .value
-      .trim();
-
-
-  const serverId =
-    document
-      .getElementById("serverId")
-      .value
-      .trim();
-
-
-
-  /* CHECK DIAMOND */
-
-
-  if (!selectedPackage) {
-
-    alert(
-      "Sila pilih diamond dahulu."
-    );
-
-    return;
-  }
-
-
-
-  /* CHECK USER ID */
-
-
-  if (!userId) {
-
-    alert(
-      "Sila masukkan User ID."
-    );
-
-    return;
-  }
-
-
-
-  /* CHECK SERVER ID */
-
-
-  if (!serverId) {
-
-    alert(
-      "Sila masukkan Server ID."
-    );
-
-    return;
-  }
-
-
-
-  /* ======================= */
-  /* WHATSAPP NUMBER */
-  /* ======================= */
-
-  /*
-  TUKAR NOMBOR INI
-  KEPADA WHATSAPP KAU.
-
-  Contoh:
-
-  0123456789
-
-  menjadi:
-
-  60123456789
-
-  */
-
-
-  const whatsappNumber =
-    "601153575022";
-
-
-
-  /* ======================= */
-  /* ORDER MESSAGE */
-  /* ======================= */
-
-
-  const message =
-
-    "🛒 ORDER TJB STORE MY\n\n" +
-
-    "💎 Diamond: " +
-    selectedPackage +
-    "\n" +
-
-    "💰 Harga: RM" +
-    selectedPrice.toFixed(2) +
-    "\n\n" +
-
-    "🎮 User ID: " +
-    userId +
-    "\n" +
-
-    "🌐 Server ID: " +
-    serverId +
-    "\n\n" +
-
-    "✅ Saya sudah membuat pembayaran.";
-
-
-
-  /* ======================= */
-  /* OPEN WHATSAPP */
-  /* ======================= */
-
-
-  const whatsappURL =
-
-    "https://wa.me/" +
-    whatsappNumber +
-    "?text=" +
-    encodeURIComponent(message);
-
-
-  window.open(
-    whatsappURL,
-    "_blank"
-  );
-
-}
-
-</script>
-
-</body>
-</html>
+    @media (max-width: 450px) {
+     
